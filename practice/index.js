@@ -2,7 +2,7 @@
 const { singer } = require(`./classes`)
 
 // we are assigning a new child class *kimbra_Lee* that will inherent the properties of the parent class *singer*
-const kimbra_Lee = new singer("Kimbra Lee Johnson", 32, "Somebody that I used to Know", "Kimbra")
+const kimbra_Lee = new singer("Kimbra Lee Johnson", 32, "Hi Def Distance Romance (Reimagined)", "Kimbra")
 //console.log(kimbra)
 
 
