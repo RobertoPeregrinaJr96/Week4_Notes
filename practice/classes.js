@@ -13,5 +13,38 @@ class singer {
         return `${obj.name}, who is ${obj.age} years old is the lead singer of the band ${obj.band}. Currently ${obj.band} has the hit single ${obj.hitSong} making waves on the internet`
     }
 }
+
+class VenueShows {
+    constructor(hitSong, band, from, arePlaying, hasMerch, soldOut, Drinks,) {
+        this.hitSong = hitSong
+        this.band = band
+        this.from = from
+        this.arePlaying = arePlaying
+        this.hasMerch = hasMerch
+        this.soldOut = soldOut
+        this.Drinks = Drinks
+    }
+}
+
+class PrivatShow {
+    constructor(event, band, album, opener, payout, location){
+        this.event = event;
+        this.band = band;
+        this.album = opener;
+        this.payout = payout;
+        this.location = location;
+    }
+
+    priceForShow(){
+        if(this.location === false){
+            this.payout *= 2
+            return this.payout
+        } else if(this.location === true && this.event === "corporate event"){
+            this.payout *= 2.7;
+            return this.payout
+        }
+    }
+}
+
 //(module.exports) we use module.exports to send our code to another file/module
-module.exports = { singer };
+module.exports = { singer, VenueShows };
