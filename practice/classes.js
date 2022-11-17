@@ -27,7 +27,7 @@ class VenueShows {
 }
 
 class PrivatShow {
-    constructor(event, band, album, opener, payout, location){
+    constructor(event, band, album, opener, payout, location) {
         this.event = event;
         this.band = band;
         this.album = opener;
@@ -35,16 +35,21 @@ class PrivatShow {
         this.location = location;
     }
 
-    priceForShow(){
-        if(this.location === false){
+    priceForShow() {
+        if(!(this.location) || !(this.event)) return `NO Event No Show`
+        if (this.location === false && this.event) {
             this.payout *= 2
             return this.payout
-        } else if(this.location === true && this.event === "corporate event"){
+        } else if (this.location === true && this.event === "corporate event") {
             this.payout *= 2.7;
             return this.payout
+        } else if (this.event === "charity gala") {
+            this.payout *= 0;
+            return this.payout
         }
+
     }
 }
 
 //(module.exports) we use module.exports to send our code to another file/module
-module.exports = { singer, VenueShows };
+module.exports = { singer, VenueShows, PrivatShow };
