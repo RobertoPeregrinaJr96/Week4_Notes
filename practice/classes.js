@@ -32,15 +32,15 @@ class PrivatShow {
         this.band = band;
         this.album = opener;
         this.payout = payout;
-        this.location = location;
+        this.locationInTheStates = location;
     }
 
     priceForShow() {
-        if(!(this.location) || !(this.event)) return `NO Event No Show`
-        if (this.location === false && this.event) {
+        if(!(this.locationInTheStates) || !(this.event)) return `NO Event No Show`
+        if (this.locationInTheStates === false && this.event) {
             this.payout *= 2
             return this.payout
-        } else if (this.location === true && this.event === "corporate event") {
+        } else if (this.locationInTheStates === true && this.event === "corporate event") {
             this.payout *= 2.7;
             return this.payout
         } else if (this.event === "charity gala") {
