@@ -35,7 +35,7 @@ const Amelia = new Amelia_Murray(
 
 //-----------------------------------------------------------------------------
 //(this.) the *this* keyword points to the current object it is being excuted at (like picking a fruit from a fruit basket is not the same as picking fruit from a tree,even though both are picking fruit the *context* matters)
-class SecretePreforance extends singer {
+class SecretPreforance extends singer {
     constructor(hitSong, band, from, arePlaying, hasMerch) {
         super(hitSong, band)
         this.band = band
@@ -53,14 +53,14 @@ class SecretePreforance extends singer {
             return `${this.band} are not preforming and ran out of merch at their last show sorry`
         }
     }
+
     addMoreMerch(...nums) {
        let total = nums.forEach( n => this.hasMerch += n)
          return total
     }
-
 }
 
-const Kalush = new SecretePreforance(
+const Kalush = new SecretPreforance(
     "Stefania",
     "Kalush Orchestra",
     "Ukraine",
@@ -75,11 +75,11 @@ Kalush.addMoreMerch(10)
 console.log(Kalush.hasMerch)
 // we assign (sellingMerch) with method syling invokation with Kalush(our context) . sellingMerch(our funtion)
 let sellingMerch = Kalush.sellingMerch
-let areThereMerchAtTheSecreteShow = sellingMerch.bind(Kalush)
-//console.log(areThereMerchAtTheSecreteShow())
+let areThereMerchAtTheSecretShow = sellingMerch.bind(Kalush)
+//console.log(areThereMerchAtTheSecretShow())
 
 //------------------------------------------------------------------------------
-const THEFONDATheater = new VenueShows(
+const TheFondaTheater = new VenueShows(
     "Angry Too",
     "Lola Blanc",
     "Augsburg,Germany",
@@ -91,13 +91,16 @@ const THEFONDATheater = new VenueShows(
 
 //(bind) we can assign a function that belonged to a different class and *bind* it to this class to use
 let merchAtTheVenue = Kalush.sellingMerch
-let areThereMerchBeingSoldAtTheVenue = merchAtTheVenue.bind(THEFONDATheater)
+let areThereMerchBeingSoldAtTheVenue = merchAtTheVenue.bind(TheFondaTheater)
 //console.log(areThereMerchBeingSoldAtTheVenue())
 
 //(call) we can use function from different classes by directly invoking them with the .call method(remember that C in call is for comma)
-console.log(THEFONDATheater.hasMerch)
-Kalush.addMoreMerch.call(THEFONDATheater,200)
+console.log(TheFondaTheater.hasMerch)
+Kalush.addMoreMerch.call(TheFondaTheater,200)
 // or
 //(apply) we can use the .apply method that works the same as the .call method but sends a array (remember that A in apply is for array)
-Kalush.addMoreMerch.apply(THEFONDATheater,[50,100,500])
-console.log(THEFONDATheater.hasMerch)
+Kalush.addMoreMerch.apply(TheFondaTheater,[50,100,500])
+console.log(TheFondaTheater.hasMerch)
+
+
+module.exports = {SecretPreforance, TheFondaTheater, Kalush, Amelia, kimbra_Lee, singer, VenueShows, PrivatShow }
