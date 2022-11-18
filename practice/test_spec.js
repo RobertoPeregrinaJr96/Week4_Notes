@@ -4,9 +4,10 @@ const chai = require("chai");
 const expect = chai.expect;
 
 
-describe("SecretPreforance", () => {
-    it("SecretPreforance is a secret", function () {
-
+describe("kimbra_Lee", () => {
+    it("kimbra_Lee is the vibe", function () {
+        let kimbra = kimbra_Lee.name
+        expect(kimbra).to.expect(kimbra)
     })
 
 })
