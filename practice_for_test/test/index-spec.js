@@ -1,6 +1,6 @@
 const { expect } = require('chai');
 
-const {Person,Rob} = require(`../index`);
+const { Person, Rob } = require(`../index`);
 
 
 describe('getBirthday()', () => {
