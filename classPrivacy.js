@@ -1,3 +1,4 @@
+console.log("_ naming convention for privacy")
 class Media {
     constructor(media, title, isCheckedOut, ratings) {
         this._media = media;
@@ -23,7 +24,7 @@ console.log(Book.title) // What is Privacy
 
 Book.isCheckedOut = true
 console.log(Book.isCheckedOut) // false
-
+//  console.log("# naming convention for privacy")
 // class Media {
 //     #media
 //     #title
