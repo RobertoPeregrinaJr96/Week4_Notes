@@ -1,10 +1,10 @@
 console.log("_ naming convention for privacy")
 class Media {
-    constructor(media, title, isCheckedOut, ratings) {
+    constructor(media, title, isCheckedOut = false, ratings = []) {
         this._media = media;
         this._title = title;
-        this._isCheckedOut = false;
-        this._ratings = [];
+        this._isCheckedOut = isCheckedOut;
+        this._ratings = ratings;
     }
     get title() {
         return this._title;
@@ -17,7 +17,7 @@ class Media {
     }
 }
 
-const Book = new Media('book','What is Privacy',)
+const Book = new Media('book', 'What is Privacy',)
 
 Book.title = "New Title"
 console.log(Book.title) // What is Privacy
