@@ -1,6 +1,6 @@
-//(class) by using the *class* keyword I can initalize a new class object
+//(class) by using the *class* keyword I can initialize a new class object
 class singer {
-    //(constructor) the *constructor* keyword allows me to utilize the *new* keyword to creat new class instance that will inherent everything in the constructor curly braces
+    //(constructor) the *constructor* keyword allows me to utilize the *new* keyword to create new class instance that will inherent everything in the constructor curly braces
     constructor(name, age, hitSong, band) {
         //(this) the this keyword allows the us to use the object properties
         this.name = name,
