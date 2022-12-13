@@ -1,6 +1,10 @@
 //(require) destructor the object to its name, *require* imports the information form the path in the parentheses
-const {singer, VenueShows, PrivatShow } = require(`./classes`)
+const { singer, VenueShows, PrivateShow } = require(`./classes`)
 
+console.log( Object.getOwnPropertyNames(singer))
+console.log(singer.length)
+console.log(singer.name)
+console.log(singer.prototype)
 //(new) we are assigning a new child class *kimbra_Lee* that will inherent the properties of the parent class *singer*
 const kimbra_Lee = new singer("Kimbra Lee Johnson", 32, "Hi Def Distance Romance (Reimagined)", "Kimbra")
 //console.log(kimbra)
@@ -35,7 +39,7 @@ const Amelia = new Amelia_Murray(
 
 //-----------------------------------------------------------------------------
 //(this.) the *this* keyword points to the current object it is being executed at (like picking a fruit from a fruit basket is not the same as picking fruit from a tree,even though both are picking fruit the *context* matters)
-class SecretPreforance extends singer {
+class SecretePerformance extends singer {
     constructor(hitSong, band, from, arePlaying, hasMerch) {
         super(hitSong, band)
         this.band = band
@@ -55,12 +59,12 @@ class SecretPreforance extends singer {
     }
 
     addMoreMerch(...nums) {
-       let total = nums.forEach( n => this.hasMerch += n)
-         return total
+        let total = nums.forEach(n => this.hasMerch += n)
+        return total
     }
 }
 
-const Kalush = new SecretPreforance(
+const Kalush = new SecretePerformance(
     "Stefania",
     "Kalush Orchestra",
     "Ukraine",
@@ -70,10 +74,10 @@ const Kalush = new SecretPreforance(
 
 // console.log(Kalush.sellingMerch())
 // console.log(Kalush.sellingMerch())
-console.log(Kalush.hasMerch)
+// console.log(Kalush.hasMerch)
 Kalush.addMoreMerch(10)
-console.log(Kalush.hasMerch)
-// we assign (sellingMerch) with method syling invokation with Kalush(our context) . sellingMerch(our funtion)
+// console.log(Kalush.hasMerch)
+// we assign (sellingMerch) with method styling invocation with Kalush(our context) . sellingMerch(our function)
 let sellingMerch = Kalush.sellingMerch
 let areThereMerchAtTheSecretShow = sellingMerch.bind(Kalush)
 //console.log(areThereMerchAtTheSecretShow())
@@ -95,12 +99,12 @@ let areThereMerchBeingSoldAtTheVenue = merchAtTheVenue.bind(TheFondaTheater)
 //console.log(areThereMerchBeingSoldAtTheVenue())
 
 //(call) we can use function from different classes by directly invoking them with the .call method(remember that C in call is for comma)
-console.log(TheFondaTheater.hasMerch)
-Kalush.addMoreMerch.call(TheFondaTheater,200,100,350)
+// console.log(TheFondaTheater.hasMerch)
+Kalush.addMoreMerch.call(TheFondaTheater, 200, 100, 350)
 // or
 //(apply) we can use the .apply method that works the same as the .call method but sends a array (remember that A in apply is for array)
-Kalush.addMoreMerch.apply(TheFondaTheater,[50,100,500])
-console.log(TheFondaTheater.hasMerch)
+Kalush.addMoreMerch.apply(TheFondaTheater, [50, 100, 500])
+// console.log(TheFondaTheater.hasMerch)
 
 
-module.exports = {SecretPreforance, TheFondaTheater, Kalush, Amelia, kimbra_Lee, singer, VenueShows, PrivatShow }
+module.exports = { SecretePerformance, TheFondaTheater, Kalush, Amelia, kimbra_Lee, singer, VenueShows, PrivateShow }
