@@ -23,11 +23,14 @@ class Rob extends Person {
         this.location = location;
     }
     moving(location) {
-        return location === undefined ? "add a location" : this.location = location
+        if (location) {
+            this.location = location
+        }
+        return this.location
     }
 }
 
-const rob = new Rob("Roberto Peregrina", 10, 08, 1996, ["driver license"], "Bakersfield,Califorina")
+const rob = new Rob("Roberto Peregrina", 10, 08, 1996, ["driver license"], "Bakersfield,California")
 
 const getBirthday = rob.getBirthday.bind(rob)
 console.log(getBirthday())
@@ -36,7 +39,7 @@ const getAge = rob.getAge.bind(rob)
 console.log(getAge())
 
 const moving = rob.moving.bind(rob)
-console.log(moving("bay area"))
+console.log(moving("somewhere"))
 // console.log(rob.location)
 
 

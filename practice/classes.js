@@ -12,6 +12,11 @@ class singer {
     info(obj) {
         return `${obj.name}, who is ${obj.age} years old is the lead singer of the band ${obj.band}. Currently ${obj.band} has the hit single ${obj.hitSong} making waves on the internet`
     }
+
+    static howManySinger = () => {
+        let count = 0
+        return count
+    }
 }
 
 class VenueShows {
@@ -36,7 +41,7 @@ class PrivatShow {
     }
 
     priceForShow() {
-        if(!(this.locationInTheStates) || !(this.event)) return `NO Event No Show`
+        if (!(this.locationInTheStates) || !(this.event)) return `NO Event No Show`
         if (this.locationInTheStates === false && this.event) {
             this.payout *= 2
             return this.payout
